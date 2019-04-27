@@ -1,23 +1,31 @@
 import React, { Component } from 'react'
-import Home from '../components/Home';
+import CardList from './components/CardList';
+import API from "../utils/API";
 
 class HomePage extends Component {
+
   constructor(props) {
     super(props);
-    this.defaultRoomId = String(new Date() - new Date().setHours(0, 0, 0, 0));
-    this.state = { roomId: this.defaultRoomId };
-    this.handleChange = this.handleChange.bind(this);
+    this.state = {
+      events: []
+    }
   }
-  handleChange(e) {
-    this.setState({ roomId: e.target.value });
+  
+  componentDidMount() {
+    this.loadBooks();
   }
+
+  loadBooks = () => {
+    API.getEVents()
+      .then(res =>
+        this.setState({ events: res.data})
+      )
+      .catch(err => console.log(err));
+  };
+
   render(){
     return (
-      <Home
-        defaultRoomId={this.defaultRoomId}
-        roomId={this.state.roomId}
-        handleChange={this.handleChange}
-      />
+      <CardList events={this.state.events}/>
     );
   }
 }
