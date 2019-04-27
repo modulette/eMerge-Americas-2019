@@ -1,6 +1,6 @@
 import React from 'react'
 import Remarkable from 'remarkable'
-import Communication from '../components/Communication'
+import MediaController from '../components/MediaControllers'
 import store from '../store'
 import { connect } from 'react-redux'
 class CommunicationContainer extends React.Component {
@@ -79,7 +79,7 @@ class CommunicationContainer extends React.Component {
   }
   render(){
     return (
-      <Communication
+      <MediaController
         {...this.state}
         toggleVideo={this.toggleVideo}
         toggleAudio={this.toggleAudio}
