@@ -14,7 +14,6 @@
   <a href="#goals">Goals</a> •
   <a href="#why">Why</a> •
   <a href="#technologies">Technologies</a> •
-  <a href="#architecture">Technologies</a> •
 
 </p>
 
