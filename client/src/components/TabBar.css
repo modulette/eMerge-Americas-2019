@@ -1,0 +1,15 @@
+.nav-item{
+    background-color: #eeeeee;
+}
+
+.nav-item span {
+    font-size: 12px;
+}
+  
+.nav-item a {
+    color: #000000;
+}
+  
+.nav-item i{
+    display: block;
+}

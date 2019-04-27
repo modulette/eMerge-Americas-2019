@@ -1,0 +1,11 @@
+body {
+    padding-top: 58px;
+    padding-bottom: 58px;
+}
+nav{
+    background-color: #eeeeee;
+}
+
+.navbar-light .navbar-brand {
+    color: #000000;
+}
