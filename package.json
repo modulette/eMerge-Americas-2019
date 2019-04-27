@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "express": "^4.16.4",
     "helmet": "^3.16.0",
     "install": "^0.12.2",
+    "jsonserver": "^0.1.6",
     "mongoose": "^5.5.4",
     "npm": "^6.9.0",
     "react": "^16.8.6",
@@ -25,7 +27,8 @@
   },
   "scripts": {
     "postinstall": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "json:server": "json-server --watch data.json --port 4001"
   },
   "eslintConfig": {
     "extends": "react-app"
