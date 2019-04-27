@@ -22,5 +22,18 @@
         "Miami"
       ]
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "first": "Fulton",
+      "img": "https://fultongarcia.com/files/corgishirt.jpg",
+      "last": "Garcia",
+      "points": 10,
+      "events": [
+        "Beach Clean Up",
+        "Earth Day"
+      ]
+    }
   ]
 }
