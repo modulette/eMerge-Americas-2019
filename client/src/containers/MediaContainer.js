@@ -1,6 +1,5 @@
 import React from 'react'
 import Remarkable from 'remarkable'
-import MediaContainer from './MediaContainer'
 import Communication from '../components/Communication'
 import store from '../store'
 import { connect } from 'react-redux'

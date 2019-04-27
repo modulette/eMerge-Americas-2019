@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ToggleFullScreen from './ToggleFullScreen';
 
 const MediaController = props =>
   <div className="auth">
