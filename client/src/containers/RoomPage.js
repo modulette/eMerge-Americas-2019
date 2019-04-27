@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MediaContainer from './MediaContainer'
-import CommunicationContainer from './CommunicationContainer'
+import StreamContainer from './StreamContainer'
 import { connect } from 'react-redux'
 import store from '../store'
 import io from 'socket.io-client'
@@ -20,8 +20,8 @@ class RoomPage extends Component {
   render(){
     return (
       <div>
-        <MediaContainer media={media => this.media = media} socket={this.socket} getUserMedia={this.getUserMedia} />
-        <CommunicationContainer socket={this.socket} media={this.media} getUserMedia={this.getUserMedia} />
+        <StreamContainer media={media => this.media = media} socket={this.socket} getUserMedia={this.getUserMedia} />
+        <MediaContainer socket={this.socket} media={this.media} getUserMedia={this.getUserMedia} />
       </div>
     );
   }
