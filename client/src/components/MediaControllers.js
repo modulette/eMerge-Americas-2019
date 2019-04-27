@@ -28,10 +28,10 @@ const MediaController = props =>
       </button>
     </div>
     <div className="request-access">
-      <p><span className="you-left">You hung up.&nbsp;</span>Send an invitation to join the room.</p>
+      <p><span className="you-left">You ended the event.&nbsp;</span>Send an invitation to join the room.</p>
       <form onSubmit={props.send}>
-        <input type="text" autoFocus onChange={props.handleInput} data-ref="message"  maxLength="30" required placeholder="Hi, I'm John Doe." />
-        <button className="primary-button">Send</button>
+        <input style={{display:"inline", marginRight: "5px", width:"60%"}} type="text" autoFocus onChange={props.handleInput} data-ref="message"  maxLength="30" required placeholder="Enter a message here." />
+        <button className="primary-button">Join</button>
       </form>
     </div>
     <div className="grant-access">
@@ -41,12 +41,11 @@ const MediaController = props =>
       <button onClick={props.handleInvitation} data-ref="accept" className="primary-button">Accept</button>
     </div>
     <div className="room-occupied">
-      <p>Please, try another room!</p>
+      <p>Sorry, this room is full!</p>
       <Link  className="primary-button" to="/">OK</Link>
     </div>
     <div className="waiting">
-      <p><span>Waiting for someone to join this room:&nbsp;</span><a href={window.location.href}>{window.location.href}</a><br/>
-      <span className="remote-left">The remote side hung up.</span></p>
+      <p><span style={{color:"white"}}>Waiting for someone to join this room&nbsp;</span><br/></p>
     </div>
   </div>
 
