@@ -2,7 +2,6 @@ const path = require("path");
 const express = require("express");
 const helmet = require('helmet');
 const mongoose = require("mongoose");
-
 const compression = require('compression');
 
 const app = express();
@@ -17,13 +16,11 @@ app.use(express.json({ limit: '300kb' }));
 app.use(express.urlencoded({ extended: true }));
 // set up static folder
 app.use(express.static(path.join(__dirname, 'dist')))
-// compress request to improve performance when displaying to clients
+// compress response to improve performance when displaying to clients
 app.use(compression());
-
 
 // use our crud routes
 app.use(routes);
-
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/emerge" , {useNewUrlParser: true} );

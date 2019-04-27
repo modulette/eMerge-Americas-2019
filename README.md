@@ -14,6 +14,7 @@
   <a href="#goals">Goals</a> •
   <a href="#why">Why</a> •
   <a href="#technologies">Technologies</a> •
+   <a href="#LoFiMockups">LoFi Modules</a> •
 
 </p>
 
@@ -39,6 +40,9 @@
 * React
 * Redux
 * Heroku
+
+## LoFi Mockups
+<img src="https://i.ibb.co/hBZVj3Q/20190427-111449.jpg" alt="Architecture" width="600">
 
 ## Architecture
 
