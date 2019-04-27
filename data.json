@@ -1,9 +1,15 @@
 {
-  "events": {
-    "id": "1",
-    "name": "Clean Up Miami Beach",
-    "thumbNail": "https://d3n8a8pro7vhmx.cloudfront.net/cleanup/pages/16/meta_images/original/FB_Share_v1.jpg?1534018055",
-    "user": "Fulton",
-    "tags": "Beach, Clean Up, Miami"
-  }
+  "events": [
+    {
+      "id": 1,
+      "title": "Clean Up Miami Beach",
+      "thumbNail": "https://d3n8a8pro7vhmx.cloudfront.net/cleanup/pages/16/meta_images/original/FB_Share_v1.jpg?1534018055",
+      "user": "Fulton",
+      "categories": [
+        "Beach",
+        "Clean Up",
+        "Miami"
+      ]
+    }
+  ]
 }
