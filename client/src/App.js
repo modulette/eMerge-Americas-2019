@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import store from './store';
+import "./app.css";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './containers/HomePage';
 import Room from './containers/RoomPage';
@@ -16,7 +17,7 @@ export default class App extends Component {
 					<AppNavBar />
 						<Switch>
 							<Route exact path="/" component={Home} />
-							<Route path="/r/:room" component={Room} />
+							<Route path="/event/:id" component={Room} />
 						</Switch>
 						<TabBar />
 					</BrowserRouter>
