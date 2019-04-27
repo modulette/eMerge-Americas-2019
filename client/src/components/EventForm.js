@@ -6,19 +6,26 @@ import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import MultiCreateInput from './MultiCreateInput';
 import Button from 'react-bootstrap/Button';
-//import API from "../utils/API";
+import API from "../utils/API";
 
 function EventForm() {
-    const [title, setTitle] = useState("");
+    const [title, setTitle,] = useState("");
+    const [image, setImage] = useState("");
     const [category, setCategory] = useState(null);
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(title, category);
+        const data = { title, category, image , user:"Fulton"}
+        API.createEvents(data).then((data)=>{
+            alert(JSON.stringify(data));
+        }).catch(err=> console.log(err))
     }
 
     function handleTitleChange(e) {
         setTitle(e.currentTarget.value);
+    }
+    function handleImageChange(e) {
+        setImage(e.currentTarget.value);
     }
 
     function handleCategoryChange(value){
@@ -41,6 +48,10 @@ function EventForm() {
                                     <MultiCreateInput handleChange={handleCategoryChange}/>
                                 </Form.Group>
                                 <Button variant="primary" type="submit">Submit</Button>
+                                <Form.Group>
+                                    <Form.Label>Image Link</Form.Label>
+                                    <Form.Control type="text" placeholder="Image Link" value={image} onChange={handleImageChange} required/>
+                                </Form.Group>
                             </Form>
                         </Card.Body>
                     </Card>
