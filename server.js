@@ -1,11 +1,20 @@
-const express = require("express"),
-    app = express(),
-    path = require('path'),
-    PORT = process.env.PORT || 3000;
+// load the environment variables
+require('./settings/environment')();
+const http = require('http');
+const app = require('./app');
+const PORT = process.env.PORT || 3001;
 
-app.use(express.static(path.join(__dirname, 'dist')))
-    .use((req, res) => res.sendFile(__dirname + '/dist/index.html'))
-    .disable('x-powered-by')
-    .listen(PORT, function() {
-        console.log(`Server running on port ${PORT}!`);
-    });
+/**
+ * This function takes the approach described in the node js best practices
+ * abstracting app and server from each other
+ * @see https://github.com/i0natan/nodebestpractices/blob/master/sections/projectstructre/separateexpress.md
+ * this will simply create a server with the app.js listening on PORT
+ */
+const createSimpleServer = () => {
+  const server = http.createServer(app);
+  server.listen(PORT, () => {
+    console.log(`Hello World 🌎 I'm Listening on port ${PORT} `);
+  });
+};
+
+createSimpleServer();
