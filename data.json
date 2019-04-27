@@ -10,6 +10,17 @@
         "Clean Up",
         "Miami"
       ]
+    },
+    {
+      "id": 2,
+      "title": "Earth Day",
+      "thumbNail": "https://www.adlibbing.org/wp-content/uploads/2017/04/earthday2015.jpg",
+      "user": "Fulanito",
+      "categories": [
+        "Beach",
+        "Clean Up",
+        "Miami"
+      ]
     }
   ]
 }
