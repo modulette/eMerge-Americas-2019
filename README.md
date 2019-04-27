@@ -42,7 +42,7 @@
 * Heroku
 
 ## LoFi Mockups
-
+<img src="https://i.ibb.co/hBZVj3Q/20190427-111449.jpg" alt="Architecture" width="600">
 
 ## Architecture
 
