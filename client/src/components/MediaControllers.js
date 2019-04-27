@@ -30,13 +30,13 @@ const MediaController = props =>
     <div className="request-access">
       <p style={{color:"#dcdbdb", marginTop: "15px", marginBottom: "0px"}}>Send a message to join the room.</p>
       <form onSubmit={props.send}>
-        <input style={{display:"inline", marginRight: "5px", width:"60%"}} type="text" autoFocus onChange={props.handleInput} data-ref="message"  maxLength="30" required placeholder="Enter a message here." />
+        <input style={{color:"#dcdbdb", display:"inline", marginRight: "5px", width:"60%"}} type="text" autoFocus onChange={props.handleInput} data-ref="message"  maxLength="30" required placeholder="Enter a message here." />
         <button className="primary-button">Join</button>
       </form>
     </div>
     <div className="grant-access">
       <p style={{color:"#dcdbdb"}}>A peer has sent you a message to join the room:</p>
-      <div dangerouslySetInnerHTML={props.getContent(props.message)}></div>
+      <div  style={{color:"#dcdbdb"}} dangerouslySetInnerHTML={props.getContent(props.message)}></div>
       <button onClick={props.handleInvitation} data-ref="reject" className="primary-button">Reject</button>
       <button onClick={props.handleInvitation} data-ref="accept" className="primary-button">Accept</button>
     </div>
