@@ -17,7 +17,6 @@
     "socket.io": "^2.2.0"
   },
   "scripts": {
-    "postinstall": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 0",
     "json:server": "json-server --watch data.json --port 4001"
   },
