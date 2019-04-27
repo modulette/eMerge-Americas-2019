@@ -1,15 +1,1 @@
-{
-  "events": [
-    {
-      "id": 1,
-      "title": "Clean Up Miami Beach",
-      "thumbNail": "https://d3n8a8pro7vhmx.cloudfront.net/cleanup/pages/16/meta_images/original/FB_Share_v1.jpg?1534018055",
-      "user": "Fulton",
-      "categories": [
-        "Beach",
-        "Clean Up",
-        "Miami"
-      ]
-    }
-  ]
-}
+{"events":[{"id":1,"title":"Clean Up Miami Beach","thumbNail":"https://d3n8a8pro7vhmx.cloudfront.net/cleanup/pages/16/meta_images/original/FB_Share_v1.jpg?1534018055","user":"Fulton","categories":["Beach","Clean Up","Miami"]}],"socket.io":[{"id":"cadf33e8-10ef-45f5-c053-e59f73b5161f"},{"id":"899c36de-8cec-4264-fc9d-e7d5902e7944"},{"id":"5baa03b1-a2ad-4bcb-8fc3-c351da89b0a2"},{"id":"06cb488c-b89b-45cf-f2b3-392d72101d09"},{"id":"44015729-c496-4b37-e345-041eab825419"},{"id":"8c791567-f3cd-4a60-d4df-4e45bc8c1a5b"},{"id":"32b5515e-4a0b-401d-efc5-40e79d59af8d"},{"id":"b811f2c7-ebe7-477b-f2c5-9fc759f59899"},{"id":"1dede629-8186-4200-c2e2-149fbd3cd494"},{"id":"bb37ceb0-c4ef-4820-82ba-70709f580d40"},{"id":"50424706-4146-42c3-91f5-34d33c502a9e"},{"id":"1969614a-ff89-495e-8beb-6205bba294d7"},{"id":"f95c3bea-8a04-4267-927f-60cfedfa0c4c"},{"id":"4f5649e2-8500-40ee-fe8a-75e3e447c41a"},{"id":"ea8ebc3d-99ba-4ad5-f7e6-6310d7979db3"},{"id":"ef92ecb0-65e1-4a36-bf58-b90fec39d691"},{"id":"62f49e56-3b1e-4ce3-b0e6-187aea4d895e"},{"id":"5c085fa3-6e19-4253-b3be-93dbe96b5f88"},{"id":"c16db38d-85c8-4f17-fbe3-5b7e01d4efa2"},{"id":"37df0a6b-bce7-4f9e-fdc6-918511f36062"}]}

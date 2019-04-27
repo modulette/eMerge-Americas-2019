@@ -11,9 +11,12 @@
     "mongoose": "^5.5.4",
     "socket.io": "^2.2.0"
   },
+  "devdependencies": {
+    "concurrently": "^4.1.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
-    "start": "node server.js && npm run json",
+    "start": "concurrently \"node server.js\" \"npm run json\"",
     "client": "cd client && yarn build",
     "json": "./node_modules/.bin/jsonserver --watch --path ./data.json --port 4001"
   },

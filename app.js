@@ -21,7 +21,4 @@ app.use(compression());
 // use our crud routes
 app.use(routes);
 
-// Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/emerge" , {useNewUrlParser: true} );
-
 module.exports = app;
