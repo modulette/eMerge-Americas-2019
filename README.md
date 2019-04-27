@@ -1,3 +1,4 @@
+[![Build Status](https://api.travis-ci.com/modulette/eMerge-Americas-2019.svg?branch=master)](https://travis-ci.org/{modulette}/{eMerge-Americas-2019})
 <h1 align="center">
   <br>
   <a href="http://google.com"><img src="https://avatars3.githubusercontent.com/u/48931493?s=400&v=4" alt="Pending Logo" width="200"></a>
@@ -17,6 +18,8 @@
    <a href="#LoFiMockups">LoFi Modules</a> •
 
 </p>
+
+
 
 ## Goals
 * Create an application that allows users to create events focused on conservation, clean up and awareness for their local community environments. Users can stream their contributions on the platform and then receive micro rewards or promotional credits for contributing.
