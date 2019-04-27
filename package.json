@@ -18,6 +18,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
+    "start": "node server.js && npm run json:server",
+    "client": "cd client && yarn build",
     "json:server": "json-server --watch data.json --port 4001"
   },
   "eslintConfig": {
