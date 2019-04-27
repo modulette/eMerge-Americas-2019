@@ -14,6 +14,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
+    "heroku-postbuild": "yarn client",
     "start": "concurrently \"node server.js\" \"npm run json\"",
     "client": "cd client && yarn build",
     "json": "./node_modules/.bin/jsonserver --watch --path ./data.json --port 4001"
