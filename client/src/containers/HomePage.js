@@ -28,7 +28,10 @@ class HomePage extends Component {
 
   render(){
     return (
+      <div>
+        <h1 style={{textAlign:"center",paddingTop:"20px", color:"#222323"}}>Live events</h1>
       <CardList events={this.state.events}/>
+      </div>
     );
   }
 }

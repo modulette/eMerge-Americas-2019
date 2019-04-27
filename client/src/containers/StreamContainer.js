@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 class MediaBridge extends Component {
   constructor(props) {
@@ -36,43 +38,43 @@ class MediaBridge extends Component {
     this.props.socket.emit('leave');
   }
   onRemoteHangup() {
-    this.setState({user: 'host', bridge: 'host-hangup'});
+    this.setState({ user: 'host', bridge: 'host-hangup' });
   }
   onMessage(message) {
-      if (message.type === 'offer') {
-          // set remote description and answer
-          this.pc.setRemoteDescription(new RTCSessionDescription(message));
-          this.pc.createAnswer()
-            .then(this.setDescription)
-            .then(this.sendDescription)
-            .catch(this.handleError); // An error occurred, so handle the failure to connect
+    if (message.type === 'offer') {
+      // set remote description and answer
+      this.pc.setRemoteDescription(new RTCSessionDescription(message));
+      this.pc.createAnswer()
+        .then(this.setDescription)
+        .then(this.sendDescription)
+        .catch(this.handleError); // An error occurred, so handle the failure to connect
 
-      } else if (message.type === 'answer') {
-          // set remote description
-          this.pc.setRemoteDescription(new RTCSessionDescription(message));
-      } else if (message.type === 'candidate') {
-          // add ice candidate
-          this.pc.addIceCandidate(
-              new RTCIceCandidate({
-                  sdpMLineIndex: message.mlineindex,
-                  candidate: message.candidate
-              })
-          );
-      }
+    } else if (message.type === 'answer') {
+      // set remote description
+      this.pc.setRemoteDescription(new RTCSessionDescription(message));
+    } else if (message.type === 'candidate') {
+      // add ice candidate
+      this.pc.addIceCandidate(
+        new RTCIceCandidate({
+          sdpMLineIndex: message.mlineindex,
+          candidate: message.candidate
+        })
+      );
+    }
   }
   sendData(msg) {
     this.dc.send(JSON.stringify(msg))
   }
   // Set up the data channel message handler
   setupDataHandlers() {
-      this.dc.onmessage = e => {
-          var msg = JSON.parse(e.data);
-          console.log('received message over data channel:' + msg);
-      };
-      this.dc.onclose = () => {
-        this.remoteStream.getVideoTracks()[0].stop();
-        console.log('The Data Channel is Closed');
-      };
+    this.dc.onmessage = e => {
+      var msg = JSON.parse(e.data);
+      console.log('received message over data channel:' + msg);
+    };
+    this.dc.onclose = () => {
+      this.remoteStream.getVideoTracks()[0].stop();
+      console.log('The Data Channel is Closed');
+    };
   }
   setDescription(offer) {
     this.pc.setLocalDescription(offer);
@@ -82,7 +84,7 @@ class MediaBridge extends Component {
     this.props.socket.send(this.pc.localDescription);
   }
   hangup() {
-    this.setState({user: 'guest', bridge: 'guest-hangup'});
+    this.setState({ user: 'guest', bridge: 'guest-hangup' });
     this.pc.close();
     this.props.socket.emit('leave');
   }
@@ -104,35 +106,35 @@ class MediaBridge extends Component {
     // this is one of Google's public STUN servers
     // make sure your offer/answer role does not change. If user A does a SLD
     // with type=offer initially, it must do that during  the whole session
-    this.pc = new RTCPeerConnection({iceServers: [{url: 'stun:stun.l.google.com:19302'}]});
+    this.pc = new RTCPeerConnection({ iceServers: [{ url: 'stun:stun.l.google.com:19302' }] });
     // when our browser gets a candidate, send it to the peer
     this.pc.onicecandidate = e => {
-        console.log(e, 'onicecandidate');
-        if (e.candidate) {
-            this.props.socket.send({
-                type: 'candidate',
-                mlineindex: e.candidate.sdpMLineIndex,
-                candidate: e.candidate.candidate
-            });
-        }
+      console.log(e, 'onicecandidate');
+      if (e.candidate) {
+        this.props.socket.send({
+          type: 'candidate',
+          mlineindex: e.candidate.sdpMLineIndex,
+          candidate: e.candidate.candidate
+        });
+      }
     };
     // when the other side added a media stream, show it on screen
     this.pc.onaddstream = e => {
-        console.log('onaddstream', e)
-        this.remoteStream = e.stream;
-        this.remoteVideo.srcObject = this.remoteStream = e.stream;
-        this.setState({bridge: 'established'});
+      console.log('onaddstream', e)
+      this.remoteStream = e.stream;
+      this.remoteVideo.srcObject = this.remoteStream = e.stream;
+      this.setState({ bridge: 'established' });
     };
     this.pc.ondatachannel = e => {
-        // data channel
-        this.dc = e.channel;
-        this.setupDataHandlers();
-        this.sendData({
-          peerMediaStream: {
-            video: this.localStream.getVideoTracks()[0].enabled
-          }
-        });
-        //sendData('hello');
+      // data channel
+      this.dc = e.channel;
+      this.setupDataHandlers();
+      this.sendData({
+        peerMediaStream: {
+          video: this.localStream.getVideoTracks()[0].enabled
+        }
+      });
+      //sendData('hello');
     };
     // attach local media to the peer connection
     this.localStream.getTracks().forEach(track => this.pc.addTrack(track, this.localStream));
@@ -142,14 +144,20 @@ class MediaBridge extends Component {
       this.props.getUserMedia.then(attachMediaIfReady);
     }
   }
-  render(){
+  render() {
     return (
-      <div className={`media-bridge ${this.state.bridge}`}>
-        <video className="remote-video" ref={(ref) => this.remoteVideo = ref} autoPlay></video>
-        <video className="local-video" ref={(ref) => this.localVideo = ref} autoPlay muted></video>
+      <div>
+        <Row>
+          <div className={`media-bridge ${this.state.bridge}`}>
+            <video className="remote-video" ref={(ref) => this.remoteVideo = ref} autoPlay></video>
+            <video className="local-video" ref={(ref) => this.localVideo = ref} autoPlay muted></video>
+          </div>
+        </Row>
+        <Row>
+          <p>something goes here</p>
+        </Row>
       </div>
     );
   }
 }
-
 export default MediaBridge;
