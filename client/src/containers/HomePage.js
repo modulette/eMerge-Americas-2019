@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CardList from './components/CardList';
+import CardList from '../components/CardList';
 import API from "../utils/API";
 
 class HomePage extends Component {
@@ -12,15 +12,18 @@ class HomePage extends Component {
   }
   
   componentDidMount() {
-    this.loadBooks();
+    this.loadEvents();
   }
 
-  loadBooks = () => {
-    API.getEVents()
-      .then(res =>
+  loadEvents = () => {
+    API.getEvents()
+      .then(res => {
         this.setState({ events: res.data})
+      }
       )
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err)
+      });
   };
 
   render(){
