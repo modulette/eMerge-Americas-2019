@@ -1,25 +1,18 @@
 {
-  "name": "emerge",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.0",
-    "express": "^4.16.4",
-    "helmet": "^3.16.0",
-    "install": "^0.12.2",
-    "jsonserver": "^0.1.6",
-    "mongoose": "^5.5.4",
-    "npm": "^6.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0",
-    "remarkable": "^1.7.1",
-    "socket.io": "^2.2.0"
+    "remarkable": "^1.7.1"
   },
   "scripts": {
-    "postinstall": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "json:server": "json-server --watch data.json --port 4001"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
