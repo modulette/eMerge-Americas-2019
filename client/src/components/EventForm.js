@@ -15,7 +15,7 @@ function EventForm() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        const data = { title, "categories":["botanical","cleanup"], "thumbNail":image , user:"Fulton"}
+        const data = { title, "categories":category, "thumbNail":image , user:"Fulton"}
         API.createEvents(data).then((data)=>{
             alert(JSON.stringify(data));
         }).catch(err=> console.log(err))
@@ -47,11 +47,11 @@ function EventForm() {
                                     <Form.Label>Categories</Form.Label>
                                     <MultiCreateInput handleChange={handleCategoryChange}/>
                                 </Form.Group>
-                                <Button variant="primary" type="submit">Submit</Button>
                                 <Form.Group>
                                     <Form.Label>Image Link</Form.Label>
                                     <Form.Control type="text" placeholder="Image Link" value={image} onChange={handleImageChange} required/>
                                 </Form.Group>
+                                <Button variant="primary" type="submit">Submit</Button>
                             </Form>
                         </Card.Body>
                     </Card>
