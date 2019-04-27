@@ -6,7 +6,7 @@ import EventCard from './EventCard';
 const CardList = (props) =>(
     <Container>
         <Row className="card-list">
-            {props.events.map(event =>(<EventCard event={event} />))}
+            {props.events.map((event, index) =>(<EventCard key={index} event={event} />))}
         </Row>
       </Container>
 )
