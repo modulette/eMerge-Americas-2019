@@ -22,17 +22,18 @@
 
 
 ## Goals
-* Create an application that allows users to create events focused on conservation, clean up and awareness for their local community environments. Users can stream their contributions on the platform and then receive micro rewards or promotional credits for contributing.
+* An application that empowers users to create events focused on conservation, clean up and awareness for their local community environments. Users can stream their contributions on the platform and then receive micro rewards or promotional credits for contributing.
 
 * We want to empower communities with the ability to appreciate and improve their environments and compete with other communities around the conservation efforts and allow them to share ideas i.e (Miami Beach Cleanup, Long Beach Cleanup)
 
 * We began with our target city in this case the 305 🌴☀️.
 
 ## Why?
-1. We want to highlight what multiple communities are doing to help preserve and improve their environment in a focused platform.
+1. We want to highlight what multiple communities are doing to help preserve and improve their environment, in a targeted platform.
 2. Offer incentives to contributors to active clean up their environments through partnerships with local business
 3. Ensure participation through the live streaming and future geo-location enhancements on the application
-4. Allow communities to engage in idea sharing on ways to better environment.
+4. Allow communities to engage in idea sharing on ways to better environment
+5. Giving a spotlight to wildlife conservation leaders like Zoo Miami wanting to reach a wider audience and use their resources to help conservation efforts
 
 ## Technologies
 * Node.js
