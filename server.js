@@ -18,6 +18,7 @@ const createSimpleServer = () => {
   });
 };
 
+// creates a socket server
 const createSocketServer = (socket) =>{
   const server = http.createServer(app).listen(PORT, () => {
     console.log(`Hello World 🌎 I'm Listening on port ${PORT} `);
