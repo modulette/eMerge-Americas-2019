@@ -27,9 +27,9 @@
 
 ## Why?
 1. We want to highlight what multiple communities are doing to help preserve and improve their environment in a focused platform.
-2. Offer incentives to contributors through partnerships with local communities
-3. Ensure participation through the live streaming and future geo-location enhancement
-4.
+2. Offer incentives to contributors to active clean up their environments through partnerships with local business
+3. Ensure participation through the live streaming and future geo-location enhancements on the application
+4. Allow communities to engage in idea sharing on ways to better environment.
 
 ## Technologies
 * Node.js
@@ -43,7 +43,7 @@
 
 ## Architecture
 
-<img src="https://ibb.co/gy16dnb" alt="Architecture" width="800">
+<img src="https://i.ibb.co/Q9BXk57/Emerge-Diagram.png" alt="Architecture" width="600">
 ---
 
 > [OurSite](https://www.modulette.com/) &nbsp;&middot;&nbsp;
