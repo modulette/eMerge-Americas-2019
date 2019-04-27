@@ -25,7 +25,9 @@ const createSocketServer = (socket) =>{
   });
   const socketServer = socket(server);
   socketServer.on('connection', socket => {
+    // initiates socket event
     let room = '';
+   // create room and emit a creation event
     const create = err => {
       if (err) {
         return console.log(err);
@@ -33,6 +35,39 @@ const createSocketServer = (socket) =>{
       socket.join(room);
       socket.emit('create');
     };
+// sending to all clients in the room (channel) except sender
+  socket.on('message', message => socket.broadcast.to(room).emit('message', message));
+  socket.on('find', () => {
+    // define the room from the incoming url
+    const url = socket.request.headers.referer.split('/');
+    room = url[url.length - 1];
+    const sr = socketServer.sockets.adapter.rooms[room];
+    if (sr === undefined) {
+      // no room with such name is found so create it
+      socket.join(room);
+      socket.emit('create');
+    } else if (sr.length === 1) {
+      socket.emit('join');
+    } else {
+      // @to-do increase max to more than two clients limitation of sever
+      socket.emit('full', room);
+    }
+  });
+  socket.on('auth', data => {
+    data.sid = socket.id;
+    // sending to all clients in the room (channel) except sender
+    socket.broadcast.to(room).emit('approve', data);
+  });
+  socket.on('accept', id => {
+    socketServer.sockets.connected[id].join(room);
+    // sending to all clients in 'game' room(channel), include sender
+    socketServer.in(room).emit('bridge');
+  });
+  socket.on('reject', () => socket.emit('full'));
+  socket.on('leave', () => {
+    // sending to all clients in the room (channel) except sender
+    socket.broadcast.to(room).emit('hangup');
+    socket.leave(room);});
   });
 }
 
