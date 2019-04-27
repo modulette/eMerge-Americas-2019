@@ -1,7 +1,7 @@
 // const resourceRoutes = require("./resource");
 const jsonServer = require('json-server');
 const middlewares = jsonServer.defaults();
-const router = jsonServer.router('db.json');
+const router = jsonServer.router('data.json');
 
 
 // // resources routes
