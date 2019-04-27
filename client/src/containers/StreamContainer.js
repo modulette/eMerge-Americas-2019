@@ -146,17 +146,10 @@ class MediaBridge extends Component {
   }
   render() {
     return (
-      <div>
-        <Row>
           <div className={`media-bridge ${this.state.bridge}`}>
             <video className="remote-video" ref={(ref) => this.remoteVideo = ref} autoPlay></video>
             <video className="local-video" ref={(ref) => this.localVideo = ref} autoPlay muted></video>
           </div>
-        </Row>
-        <Row>
-          <p>something goes here</p>
-        </Row>
-      </div>
     );
   }
 }

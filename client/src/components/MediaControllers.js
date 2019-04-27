@@ -30,8 +30,8 @@ const MediaController = props =>
     <div className="request-access">
       <p><span className="you-left">You ended the event.&nbsp;</span>Send an invitation to join the room.</p>
       <form onSubmit={props.send}>
-        <input type="text" autoFocus onChange={props.handleInput} data-ref="message"  maxLength="30" required placeholder="Enter a message here." />
-        <button className="primary-button">Request Stream Join</button>
+        <input style={{display:"inline", marginRight: "5px", width:"60%"}} type="text" autoFocus onChange={props.handleInput} data-ref="message"  maxLength="30" required placeholder="Enter a message here." />
+        <button className="primary-button">Join</button>
       </form>
     </div>
     <div className="grant-access">
