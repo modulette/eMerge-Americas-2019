@@ -24,11 +24,7 @@
     "webpack-cli": "^3.3.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "postinstall": "webpack --mode production",
-    "eject": "react-scripts eject"
+    "postinstall": "webpack --mode production"
   },
   "eslintConfig": {
     "extends": "react-app"
