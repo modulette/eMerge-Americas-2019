@@ -1,23 +1,21 @@
 {
-  "name": "emerge",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "express": "^4.16.4",
-    "helmet": "^3.16.0",
-    "install": "^0.12.2",
-    "mongoose": "^5.5.4",
-    "npm": "^6.9.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "16.8",
+    "react-dom": "16.8",
+    "react-redux": "^7.0.2",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
-    "remarkable": "^1.7.1",
-    "socket.io": "^2.2.0"
+    "redux": "^4.0.1",
+    "socket.io-client": "^2.2.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "client": "cd client && yarn build",
-    "start": "node server.js"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

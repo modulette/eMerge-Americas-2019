@@ -3,7 +3,7 @@ const http = require('http');
 const socket = require('socket.io');
 
 const app = require('./app');
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 
 /**
  * This function takes the approach described in the node js best practices
