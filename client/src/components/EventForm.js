@@ -15,7 +15,7 @@ function EventForm() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        const data = { title, categories:category, "thumbNail":image , user:"Fulton"}
+        const data = { title, "categories":["botanical","cleanup"], "thumbNail":image , user:"Fulton"}
         API.createEvents(data).then((data)=>{
             alert(JSON.stringify(data));
         }).catch(err=> console.log(err))
