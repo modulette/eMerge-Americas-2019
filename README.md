@@ -15,7 +15,7 @@
   <a href="#goals">Goals</a> •
   <a href="#why">Why</a> •
   <a href="#technologies">Technologies</a> •
-   <a href="#LoFiMockups">LoFi Modules</a> •
+   <a href="#LoFi Mockups">LoFi Mockups</a> •
 
 </p>
 
